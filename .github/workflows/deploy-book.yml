@@ -29,9 +29,10 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Build the book
-        run: |
-          jupyter-book build . --all -v
-          ls -la _build/html/
+        run: jupyter-book build --html --ci
+
+      - name: Verify build output
+        run: ls -la _build/html/index.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

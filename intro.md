@@ -4,10 +4,7 @@ subtitle: "A step-by-step tutorial"
 date: 2026-03-03
 doi: "10.5281/zenodo.XXXXXXX"
 
-license:
-  name: "MIT License"
-  short: "MIT"
-  url: "https://opensource.org/licenses/MIT"
+license: MIT
 
 authors:
   - name: "Rowdy de Groot"

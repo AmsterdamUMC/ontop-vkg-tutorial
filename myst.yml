@@ -1,0 +1,32 @@
+version: 1
+
+project:
+  title: Ontop4OMOP Tutorial
+  github: AmsterdamUMC/Ontop4OMOP-book
+  toc:
+    - file: intro.md
+    - file: installation.md
+    - file: data-setup.md
+    - file: mappings.md
+    - file: cli-endpoint.md
+    - file: graphdb-mode.md
+    - file: sparql-queries.md
+
+site:
+  template: book-theme
+  options:
+    # TODO: Replace with Koetai brand logo when available
+    # logo: _static/koetai-logo.png
+    style: _static/metadata.css
+    folders: true
+  # ── Site-wide footer: affiliations ───────────────────────────────────────
+  # Add new affiliations by copying an <a class="footer-affil"> block below.
+  parts:
+    footer: >-
+      <div class="footer-affiliations">
+        <span class="footer-affil-label">Affiliations:</span>
+        <a href="https://ror.org/05grdyy37" target="_blank" class="footer-affil">
+          <img src="https://raw.githubusercontent.com/ror-community/ror-logos/main/ror-icon-rgb.svg"
+               alt="ROR" class="footer-affil-icon">Amsterdam UMC
+        </a>
+      </div>
