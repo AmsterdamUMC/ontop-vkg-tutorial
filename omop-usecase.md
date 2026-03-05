@@ -1,5 +1,8 @@
 ---
 title: "Use Case: OMOP Clinical Data"
+authors:
+  - name: "Carsten Fortmann-Grote"
+    orcid: "https://orcid.org/0000-0002-2579-5546"
 ---
 
 # Use Case: OMOP Clinical Data
