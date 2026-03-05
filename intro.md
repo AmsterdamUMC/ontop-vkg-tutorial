@@ -1,80 +1,99 @@
 ---
-title: "Ontop4OMOP: OMOP → SPARQL using Ontop and DuckDB"
-subtitle: "A step-by-step tutorial"
-date: 2026-03-03
+title: "Virtual Knowledge Graphs with Ontop"
+subtitle: "SWAT4HCLS 2026 Tutorial"
+date: 2026-03-05
 doi: "10.5281/zenodo.XXXXXXX"
 
 license: MIT
 
 authors:
+  - name: "Carsten Fortmann-Grote"
   - name: "Rowdy de Groot"
     orcid: "https://orcid.org/0000-0002-1248-1986"
   - name: "Andra Waagmeester"
     orcid: "https://orcid.org/0000-0001-9773-4008"
 
 keywords:
-  - OMOP CDM
-  - SPARQL
-  - Ontop
-  - DuckDB
   - Virtual Knowledge Graph
+  - Ontop
+  - OBDA
+  - SPARQL
+  - RDF
+  - OMOP CDM
+  - GBIF
+  - OMERO
+  - DuckDB
+  - PostgreSQL
   - FAIR data
   - Linked Data
 
 abstract: |
-  This tutorial demonstrates how to expose OMOP Common Data Model (CDM) data
-  stored as Parquet files as a live SPARQL endpoint using Ontop and DuckDB.
-  No RDF materialization is required. Two deployment modes are covered:
-  the standalone Ontop CLI and GraphDB Desktop with embedded Ontop.
+  This tutorial introduces Virtual Knowledge Graphs (VKGs) using the Ontop
+  framework. Starting from a solar system dataset, you will learn how to
+  convert tabular data to RDF, write OBDA mappings, and launch SPARQL
+  endpoints over relational databases — without materializing any RDF.
+  The core concepts are then applied to real-world use cases in clinical
+  data (OMOP CDM), biodiversity (GBIF), and bioimaging (OMERO).
 ---
 
-# Ontop4OMOP Tutorial
+# Virtual Knowledge Graphs with Ontop
 
-This tutorial walks you through **Ontop4OMOP** — a cross-platform, reproducible
-setup for exposing [OMOP CDM](https://www.ohdsi.org/data-standardization/) data
-as a SPARQL endpoint using:
+This tutorial introduces **Virtual Knowledge Graphs (VKGs)** — a technique
+for exposing relational data as RDF through a live SPARQL endpoint, without
+copying or converting the data. The mapping is purely virtual: every SPARQL
+query is translated to SQL on the fly.
 
-- **DuckDB** — an embedded analytical database that reads Parquet files directly
-- **Ontop** — a Virtual Knowledge Graph (VKG) system that maps SQL to RDF on the fly
-- **OBDA mappings** — declarative rules that translate SQL results into RDF triples
+The tutorial is built around the [Ontop](https://ontop-vkg.org/) VKG framework
+and uses the **Ontology-Based Data Access (OBDA)** mapping language.
 
-## What you will learn
+## Tutorial structure
 
-By the end of this tutorial you will be able to:
+The tutorial is organised in three parts:
 
-1. Install the required software (Java, Ontop CLI, DuckDB)
-2. Set up a DuckDB database from OMOP Parquet files
-3. Understand the OBDA mapping files that define the OMOP ontology
-4. Start a live SPARQL endpoint with the Ontop CLI
-5. Connect GraphDB Desktop to the same data via an Ontop Virtual Repository
-6. Run example SPARQL queries over OMOP data
+### Part I — Core concepts
+
+1. **Warmup** — Convert a CSV table of planets to RDF using Python and rdflib.
+   Understand the relationship between wide/long tables and RDF triples.
+2. **OBDA Mappings** — Learn the Ontop mapping language by virtualising
+   a solar system PostgreSQL database (planets and moons).
+3. **Installation** — Set up Java, Ontop CLI, DuckDB, and optionally
+   PostgreSQL and GraphDB Desktop.
+
+### Part II — Use case demonstrators
+
+4. **OMOP CDM** — Expose clinical OMOP data stored as Parquet files via
+   DuckDB and Ontop.
+5. **GBIF Biodiversity** — Query GBIF occurrence records from S3 Parquet
+   snapshots through a SPARQL endpoint.
+
+### Part III — Advanced application
+
+6. **OMERO Bioimaging** — Apply Ontop to an OMERO PostgreSQL database to
+   virtualise microscopy image metadata.
 
 ## Architecture
 
-The data pipeline looks like this:
+The general VKG pipeline:
 
 ```
-OMOP Parquet files  →  DuckDB (embedded)  →  Ontop  →  SPARQL endpoint
+Relational data  →  Ontop (OBDA mappings + ontology)  →  SPARQL endpoint
 ```
 
-Two deployment modes are supported:
+Ontop supports any JDBC-accessible database. This tutorial demonstrates
+three backends:
 
-**CLI mode** — lightweight, no GUI required:
+| Backend    | Use case         | Data format               |
+|------------|------------------|---------------------------|
+| PostgreSQL | Solar system, OMERO | Tables in a SQL database |
+| DuckDB     | OMOP CDM         | Parquet files (embedded)  |
+| DuckDB     | GBIF             | Parquet files (from S3)   |
 
-```
-OMOP Parquet files  →  Ontop CLI  →  SPARQL endpoint :8081
-```
+## Source repositories
 
-**GraphDB Desktop mode** — uses persistent SQL views:
-
-```
-OMOP Parquet files  →  DuckDB database  →  persistent SQL views  →  embedded Ontop in GraphDB  →  SPARQL repository :7200
-```
-
-## Source repository
-
-The full source code is available at:
-[https://github.com/AmsterdamUMC/Ontop4OMOP](https://github.com/AmsterdamUMC/Ontop4OMOP)
+- **This tutorial**: [AmsterdamUMC/Ontop4OMOP-book](https://github.com/AmsterdamUMC/Ontop4OMOP-book)
+- **SWAT4HCLS materials**: [mpievolbio-scicomp/swat4hcls2026-ontop-tutorial](https://gitlab.gwdg.de/mpievolbio-scicomp/swat4hcls2026-ontop-tutorial)
+- **OMOP source**: [AmsterdamUMC/Ontop4OMOP](https://github.com/AmsterdamUMC/Ontop4OMOP)
+- **OMERO mappings**: [German-BioImaging/omero-ontop-mappings](https://github.com/German-BioImaging/omero-ontop-mappings)
 
 ```{tableofcontents}
 ```
