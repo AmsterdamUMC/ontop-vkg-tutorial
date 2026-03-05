@@ -30,6 +30,8 @@ jobs:
 
       - name: Build the book
         run: jupyter-book build --html --ci
+        env:
+          BASE_URL: /Ontop4OMOP-book
 
       - name: Verify build output
         run: ls -la _build/html/index.html
