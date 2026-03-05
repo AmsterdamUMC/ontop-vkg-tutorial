@@ -1,5 +1,12 @@
 ---
 title: "OBDA Mappings"
+authors:
+  - name: "Carsten Fortmann-Grote"
+    orcid: "https://orcid.org/0000-0002-2579-5546"
+  - name: "Rowdy de Groot"
+    orcid: "https://orcid.org/0000-0002-1248-1986"
+  - name: "Andra Waagmeester"
+    orcid: "https://orcid.org/0000-0001-9773-4008"
 ---
 
 # OBDA Mappings
