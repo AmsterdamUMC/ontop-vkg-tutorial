@@ -1,0 +1,205 @@
+/* ─────────────────────────────────────────────
+   Ontop4OMOP — Page metadata & footer styles
+   ───────────────────────────────────────────── */
+
+.page-metadata {
+  border-top: 2px solid var(--pst-color-border, #dde1e7);
+  border-radius: 0;
+  background: transparent;
+  padding: 1.25rem 0 0.5rem 0;
+  margin: 3rem 0 1rem 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem;
+  margin-bottom: 0.45rem;
+}
+
+.meta-row:last-child {
+  margin-bottom: 0;
+}
+
+.meta-row--authors {
+  align-items: flex-start;
+}
+
+.meta-label {
+  font-weight: 600;
+  color: var(--pst-color-text-muted, #555);
+  white-space: nowrap;
+  margin-right: 0.25rem;
+}
+
+.meta-value {
+  color: var(--pst-color-text-base, #333);
+}
+
+/* ── Author block ─────────────────────────────── */
+.meta-authors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+}
+
+.meta-author-block {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.meta-affil-sep {
+  color: var(--pst-color-text-muted, #888);
+}
+
+/* ── Badges ───────────────────────────────────── */
+.meta-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 8px;
+  border-radius: 4px;
+  font-size: 0.82rem;
+  text-decoration: none !important;
+  font-weight: 500;
+  transition: opacity 0.15s;
+  white-space: nowrap;
+}
+
+.meta-badge:hover {
+  opacity: 0.82;
+}
+
+.meta-badge--orcid {
+  background: #a6ce391a;
+  border: 1px solid #a6ce39;
+  color: #4d7800 !important;
+}
+
+.meta-badge--ror {
+  background: #3192991a;
+  border: 1px solid #319299;
+  color: #1a6166 !important;
+}
+
+.meta-badge--doi {
+  background: #4281ae1a;
+  border: 1px solid #4281ae;
+  color: #1a4f72 !important;
+}
+
+.meta-badge--license {
+  background: #f0a5001a;
+  border: 1px solid #f0a500;
+  color: #7a5200 !important;
+}
+
+/* ── Keywords ─────────────────────────────────── */
+.meta-keyword {
+  display: inline-block;
+  background: #4281ae1a;
+  border: 1px solid #4281ae;
+  color: #1a4f72;
+  border-radius: 12px;
+  padding: 1px 9px;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+/* ── Abstract ─────────────────────────────────── */
+.meta-abstract {
+  margin-top: 0.6rem;
+  border-top: 1px solid var(--pst-color-border, #dde1e7);
+  padding-top: 0.6rem;
+}
+
+.meta-abstract > summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--pst-color-text-muted, #555);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.meta-abstract > summary::before {
+  content: "▶";
+  font-size: 0.65rem;
+  transition: transform 0.2s;
+}
+
+.meta-abstract[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+.meta-abstract-text {
+  margin: 0.6rem 0 0 0;
+  color: var(--pst-color-text-base, #333);
+  font-style: italic;
+  line-height: 1.7;
+}
+
+/* ─────────────────────────────────────────────
+   Site-wide footer: affiliations
+   ───────────────────────────────────────────── */
+
+.footer-affiliations {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem 1.25rem;
+  padding: 0.75rem 0 0.25rem 0;
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+.footer-affil-label {
+  font-weight: 600;
+  color: var(--pst-color-text-muted, #555);
+  white-space: nowrap;
+}
+
+.footer-affil {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 2px 10px;
+  border-radius: 4px;
+  background: #3192991a;
+  border: 1px solid #319299;
+  color: #1a6166 !important;
+  text-decoration: none !important;
+  font-weight: 500;
+  transition: opacity 0.15s;
+  white-space: nowrap;
+}
+
+.footer-affil:hover {
+  opacity: 0.82;
+}
+
+.footer-affil-icon {
+  height: 14px;
+  vertical-align: middle;
+}
+
+/* ─────────────────────────────────────────────
+   Koetai brand placeholder
+   TODO: update when Koetai brand assets arrive
+   ───────────────────────────────────────────── */
+
+.koetai-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.koetai-brand img {
+  max-height: 32px;
+}

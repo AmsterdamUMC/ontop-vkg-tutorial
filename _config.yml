@@ -1,0 +1,54 @@
+# ── Book identity ────────────────────────────────────────────────────────────
+title       : "Ontop4OMOP Tutorial"
+
+# ── Branding ─────────────────────────────────────────────────────────────────
+# TODO: Replace with Koetai brand logo when available
+# logo : "_static/koetai-logo.png"
+logo        : ""
+
+# ── Build settings ───────────────────────────────────────────────────────────
+only_build_toc_files : true
+
+# ── Execution ────────────────────────────────────────────────────────────────
+execute:
+  execute_notebooks : "off"
+
+# ── HTML output ──────────────────────────────────────────────────────────────
+repository:
+  url: https://github.com/AmsterdamUMC/Ontop4OMOP-book
+
+html:
+  use_repository_button : true
+  use_issues_button     : true
+  extra_css:
+    - "_static/metadata.css"
+
+  # ── Site-wide footer: affiliations ─────────────────────────────────────────
+  # Add new affiliations by copying an <a class="footer-affil"> block below.
+  extra_footer: |
+    <div class="footer-affiliations">
+      <span class="footer-affil-label">Affiliations:</span>
+      <a href="https://ror.org/05grdyy37" target="_blank" class="footer-affil">
+        <img src="https://raw.githubusercontent.com/ror-community/ror-logos/main/ror-icon-rgb.svg"
+             alt="ROR" class="footer-affil-icon">Amsterdam UMC
+      </a>
+      <!-- TODO: add more affiliations here, e.g.:
+      <a href="https://ror.org/XXXXXXXXX" target="_blank" class="footer-affil">
+        <img src="https://raw.githubusercontent.com/ror-community/ror-logos/main/ror-icon-rgb.svg"
+             alt="ROR" class="footer-affil-icon">Other Institution
+      </a>
+      -->
+    </div>
+
+# ── Sphinx config ─────────────────────────────────────────────────────────────
+sphinx:
+  local_extensions:
+    metadata_renderer : "_ext"
+
+  config:
+    myst_enable_extensions:
+      - "colon_fence"
+      - "deflist"
+
+    html_show_copyright : false
+    html_show_sphinx    : false
