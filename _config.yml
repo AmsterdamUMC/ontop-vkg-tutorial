@@ -4,7 +4,6 @@ title       : "Ontop4OMOP Tutorial"
 # ── Branding ─────────────────────────────────────────────────────────────────
 # TODO: Replace with Koetai brand logo when available
 # logo : "_static/koetai-logo.png"
-logo        : ""
 
 # ── Build settings ───────────────────────────────────────────────────────────
 only_build_toc_files : true
