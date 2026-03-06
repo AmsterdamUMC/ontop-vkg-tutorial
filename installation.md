@@ -9,7 +9,7 @@ The table below shows which components are needed for each:
 
 | Component | Solar system / OMERO | OMOP CDM | GBIF | GraphDB mode |
 |-----------|:-------------------:|:--------:|:----:|:------------:|
-| Java 17+  | required | required | required | required |
+| Java 21+  | required | required | required | required |
 | Ontop CLI | required | required | required | optional |
 | PostgreSQL client | required | — | — | — |
 | DuckDB | — | required | required | optional |
@@ -21,7 +21,7 @@ The table below shows which components are needed for each:
 
 ---
 
-## 1. Java 17+
+## 1. Java 21+
 
 Check whether Java is already installed:
 
@@ -29,24 +29,24 @@ Check whether Java is already installed:
 java -version
 ```
 
-You should see version **17 or higher**. If not, install it:
+You should see version **21 or higher**. If not, install it:
 
 ::::{tab-set}
 :::{tab-item} macOS (Homebrew)
 ```bash
-brew install openjdk@17
-sudo ln -sfn /opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk \
-    /Library/Java/JavaVirtualMachines/openjdk-17.jdk
+brew install openjdk@21
+sudo ln -sfn /opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk \
+    /Library/Java/JavaVirtualMachines/openjdk-21.jdk
 ```
 :::
 :::{tab-item} Ubuntu / Debian
 ```bash
 sudo apt update
-sudo apt install openjdk-17-jdk
+sudo apt install openjdk-21-jdk
 ```
 :::
 :::{tab-item} Windows
-Download OpenJDK 17 from [https://adoptium.net/](https://adoptium.net/).
+Download OpenJDK 21 from [https://adoptium.net/](https://adoptium.net/).
 After installation open a new terminal and verify:
 ```bash
 java -version
