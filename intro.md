@@ -1,7 +1,7 @@
 ---
-title: "Virtual Knowledge Graphs with Ontop"
+title: "Building Virtual Knowledge Graphs for Life Sciences with Ontop-VKG"
 subtitle: "SWAT4HCLS 2026 Tutorial"
-date: 2026-03-05
+date: 2026-03-23
 doi: "10.5281/zenodo.XXXXXXX"
 
 license: MIT
@@ -37,7 +37,7 @@ abstract: |
   data (OMOP CDM), biodiversity (GBIF), and bioimaging (OMERO).
 ---
 
-# Virtual Knowledge Graphs with Ontop
+# Building Virtual Knowledge Graphs for Life Sciences with Ontop-VKG
 
 This tutorial introduces **Virtual Knowledge Graphs (VKGs)** — a technique
 for exposing relational data as RDF through a live SPARQL endpoint, without
@@ -71,6 +71,9 @@ The tutorial is organised in three parts:
 
 6. **OMERO Bioimaging** — Apply Ontop to an OMERO PostgreSQL database to
    virtualise microscopy image metadata.
+7. **IDR: A Billion-Triple Knowledge Graph** — Deploy a SPARQL endpoint over
+   the entire Image Data Resource (14 million images, 1 billion triples) with
+   resolvable links and RDF materialization.
 
 ## Architecture
 
@@ -85,13 +88,13 @@ three backends:
 
 | Backend    | Use case         | Data format               |
 |------------|------------------|---------------------------|
-| PostgreSQL | Solar system, OMERO | Tables in a SQL database |
+| PostgreSQL | Solar system, OMERO, IDR | Tables in a SQL database |
 | DuckDB     | OMOP CDM         | Parquet files (embedded)  |
 | DuckDB     | GBIF             | Parquet files (from S3)   |
 
 ## Source repositories
 
-- **This tutorial**: [AmsterdamUMC/Ontop4OMOP-book](https://github.com/AmsterdamUMC/Ontop4OMOP-book)
+- **This tutorial**: [AmsterdamUMC/ontop-vkg-tutorial](https://github.com/AmsterdamUMC/ontop-vkg-tutorial)
 - **SWAT4HCLS materials**: [mpievolbio-scicomp/swat4hcls2026-ontop-tutorial](https://gitlab.gwdg.de/mpievolbio-scicomp/swat4hcls2026-ontop-tutorial)
 - **OMOP source**: [AmsterdamUMC/Ontop4OMOP](https://github.com/AmsterdamUMC/Ontop4OMOP)
 - **OMERO mappings**: [German-BioImaging/omero-ontop-mappings](https://github.com/German-BioImaging/omero-ontop-mappings)

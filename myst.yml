@@ -1,8 +1,8 @@
 version: 1
 
 project:
-  title: Virtual Knowledge Graphs with Ontop — SWAT4HCLS 2026 Tutorial
-  github: AmsterdamUMC/Ontop4OMOP-book
+  title: Building Virtual Knowledge Graphs for Life Sciences with Ontop-VKG
+  github: AmsterdamUMC/ontop-vkg-tutorial
   authors:
     - name: Carsten Fortmann-Grote
       orcid: 0000-0002-2579-5546
@@ -21,6 +21,7 @@ project:
     - file: gbif-sparql.md
     # ── Part III: Advanced application ──
     - file: omero.md
+    - file: idr.md
 
 site:
   template: book-theme
